@@ -367,6 +367,14 @@ public:
     Builder.defineMacro("__dcbtst", "__builtin_ppc_dcbtst");
     Builder.defineMacro("__dcbz", "__builtin_ppc_dcbz");
     Builder.defineMacro("__icbt", "__builtin_ppc_icbt");
+    Builder.defineMacro("__ldarx", "__builtin_ppc_ldarx");
+    Builder.defineMacro("__lwarx", "__builtin_ppc_lwarx");
+    Builder.defineMacro("__lharx", "__builtin_ppc_lharx");
+    Builder.defineMacro("__lbarx", "__builtin_ppc_lbarx");
+    Builder.defineMacro("__stdcx", "__builtin_ppc_stdcx");
+    Builder.defineMacro("__stwcx", "__builtin_ppc_stwcx");
+    Builder.defineMacro("__sthcx", "__builtin_ppc_sthcx");
+    Builder.defineMacro("__stbcx", "__builtin_ppc_stbcx");
   }
 };
 
