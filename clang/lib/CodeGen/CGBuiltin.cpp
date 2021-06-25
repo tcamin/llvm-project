@@ -15354,13 +15354,10 @@ Value *CodeGenFunction::EmitPPCBuiltinExpr(unsigned BuiltinID,
     auto Signed = getIntegerWidthAndSignedness(CGM.getContext(),
                  E->getArg(1)->getType()).Signed;
 
-    if (Signed) {
-      dbgs() << "SIGNED\n";
+    if (Signed)
       Ops[1] = Builder.CreateSExt(Ops[1], Int32Ty);
-    } else {
-      dbgs() << "UNSIGNED\n";
+    else
       Ops[1] = Builder.CreateZExt(Ops[1], Int32Ty);
-    }
     return Builder.CreateCall(F, Ops);
   }
 
