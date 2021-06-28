@@ -2230,6 +2230,15 @@ def TDI : DForm_base<2, (outs), (ins u5imm:$to, g8rc:$rA, s16imm:$imm),
 def TD : XForm_1<31, 68, (outs), (ins u5imm:$to, g8rc:$rA, g8rc:$rB),
                  "td $to, $rA, $rB", IIC_IntTrapD, []>;
 
+def : InstAlias<"tdlle $rA, $rB", (TD 6, g8rc:$rA, g8rc:$rB)>;
+def : InstAlias<"tdlge $rA, $rB", (TD 5, g8rc:$rA, g8rc:$rB)>;
+def : InstAlias<"tdge $rA, $rB", (TD 12, g8rc:$rA, g8rc:$rB)>;
+def : InstAlias<"tdle $rA, $rB", (TD 20, g8rc:$rA, g8rc:$rB)>;
+def : InstAlias<"twlle $rA, $rB", (TW 6, gprc:$rA, gprc:$rB)>;
+def : InstAlias<"twlge $rA, $rB", (TW 5, gprc:$rA, gprc:$rB)>;
+def : InstAlias<"twge $rA, $rB", (TW 12, gprc:$rA, gprc:$rB)>;
+def : InstAlias<"twle $rA, $rB", (TW 20, gprc:$rA, gprc:$rB)>;
+
 //===----------------------------------------------------------------------===//
 // PPC32 Load Instructions.
 //
